@@ -1,0 +1,22 @@
+{
+  "type": "module",
+  "module": "src/index.ts",
+  "scripts": {
+    "dev": "bun run --hot src/main.ts",
+    "migrate": "prisma migrate dev --name",
+    "generate": "prisma generate"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "chalk": "^5.3.0",
+    "prisma": "^5.14.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@prisma/client": "5.14.0",
+    "hono": "^4.4.2",
+    "radash": "^12.1.0"
+  }
+}

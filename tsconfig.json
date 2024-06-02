@@ -1,0 +1,29 @@
+{
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "compilerOptions": {
+        "isolatedModules": true,
+        "jsx": "react-jsx",
+        "module": "Preserve",
+        "target": "ES2022",
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "skipLibCheck": true,
+        "allowImportingTsExtensions": true,
+        "noEmit": true,
+        "baseUrl": ".",
+        "paths": {
+            "services/*": [
+                "src/services/*"
+            ],
+            "routes/*": [
+                "src/routes/*"
+            ],
+            "config/*": [
+                "src/config/*"
+            ],
+            "entities/*": [
+                "src/entities/*"
+            ]
+        }
+    }
+}
