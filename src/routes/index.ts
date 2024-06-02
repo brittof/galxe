@@ -1,26 +1,25 @@
 import type { Hono } from "hono";
-import type { StatusCode } from "hono/utils/http-status";
-import services from "services/index";
+import * as services from "services/index";
 
 export const BrowserRouter = (Router: Hono) => {
 	Router.post("/", async (context) => {
 		const data = await context.req.json();
-		const todo = await services.create(data);
+		const response = await services.create(data);
 
-		return context.json(todo.data, todo.status as StatusCode);
+		return context.json(response);
 	});
 
 	Router.get("/", async (context) => {
-		const response = await services.read();
+		const response = await services.findMany();
 
-		return context.json(response.data, response.status as StatusCode);
+		return context.json(response, 200);
 	});
 
 	Router.get("/:id", async (context) => {
 		const id = context.req.param("id");
-		const response = await services.readOne(id);
+		const response = await services.findOne(id);
 
-		return context.json(response.data, response.status as StatusCode);
+		return context.json(response);
 	});
 
 	Router.put("/:id", async (context) => {
@@ -28,14 +27,14 @@ export const BrowserRouter = (Router: Hono) => {
 		const { title, done } = await context.req.json();
 		const response = await services.update(id, { title, done });
 
-		return context.json(response.data, response.status as StatusCode);
+		return context.json(response);
 	});
 
 	Router.delete("/:id", async (context) => {
 		const id = context.req.param("id");
-		const response = await services.delete(id);
+		const response = await services.destroy(id);
 
-		return context.json(response.data, response.status as StatusCode);
+		return context.json(response);
 	});
 
 	return Router;

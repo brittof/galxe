@@ -1,4 +1,4 @@
-import { log } from "config/logger";
+import { log } from "utils/logger";
 import { App } from "./app";
 
 Bun.serve({
