@@ -7,4 +7,14 @@ datasource db {
     url      = env("DATABASE_URL")
 }
 
-// Model definitions
+model Todo {
+    id        String   @id
+    title     String   @unique
+    done      Boolean  @default(false)
+    owner     String   @default("Anonymous")
+    avatar    String?  @default("https://abre.ai/jUTD")
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    @@map("todos")
+}

@@ -16,6 +16,6 @@ export const log = {
 			chalk.underline("http://localhost:3000"),
 		repository:
 			chalk.hex("#0ba95a").bold("Repository: ") +
-			chalk.underline("https://github.com/username/repo")
+			chalk.underline("https://github.com/brittof/galxe")
 	}
 } satisfies Logger;

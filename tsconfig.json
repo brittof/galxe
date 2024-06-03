@@ -9,6 +9,7 @@
         "forceConsistentCasingInFileNames": true,
         "skipLibCheck": true,
         "allowImportingTsExtensions": true,
+        "useUnknownInCatchVariables": true,
         "noEmit": true,
         "baseUrl": ".",
         "paths": {
@@ -22,7 +23,10 @@
                 "src/config/*"
             ],
             "entities/*": [
-                "src/entities/*"
+                "src/interfaces/*"
+            ],
+            "utils/*": [
+                "src/utils/*"
             ]
         }
     }
